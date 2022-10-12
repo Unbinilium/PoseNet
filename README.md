@@ -5,8 +5,8 @@ Tracking human poses by iPhone camera with a PoseNet model, each pose contains 1
 ## Enviroment
 
 - Xcode 14
-- iOS / iPad OS 16
+- iOS/iPad OS 16
 
 ## License
 
-Please read `LICENSE` file.
+Please refer to `LICENSE` file.
