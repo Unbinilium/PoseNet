@@ -167,7 +167,7 @@ struct ConfigurationView_Previews: PreviewProvider {
                 .ignoresSafeArea(.all)
             ConfigurationPanelView(
                 poseBuilderConfiguration: Binding.constant(PoseBuilderConfiguration()),
-                position: Binding.constant(.bottom),
+                position: Binding.constant(.top),
                 observableState: Binding.constant(ObservableState.staled))
         }
     }
