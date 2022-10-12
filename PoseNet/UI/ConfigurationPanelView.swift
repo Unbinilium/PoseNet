@@ -52,14 +52,14 @@ struct ConfigurationPanelView: View {
                         SliderView(
                             description: jointConfidenceThresholdText,
                             value: $poseBuilderConfiguration.jointConfidenceThreshold,
-                            range: 0...1,
+                            range: 0.01...1,
                             observableState: $observableState)
                         
                         // Pose Confidence
                         SliderView(
                             description: poseConfidenceThresholdText,
                             value: $poseBuilderConfiguration.poseConfidenceThreshold,
-                            range: 0...1,
+                            range: 0.01...1,
                             observableState: $observableState)
                         
                         // Joint Search Radius
@@ -67,14 +67,14 @@ struct ConfigurationPanelView: View {
                             description: localJointSearchRadiusText,
                             value: $poseBuilderConfiguration.localSearchRadius.asDouble,
                             format: "%.f",
-                            range: 0...50,
+                            range: 1...50,
                             observableState: $observableState)
                         
                         // Joint Minimum Distance
                         SliderView(
                             description: matchingJointMinimumDistanceText,
                             value: $poseBuilderConfiguration.matchingJointDistance,
-                            range: 0...100,
+                            range: 1...100,
                             observableState: $observableState)
                         
                         // Joint Refinement Steps
@@ -82,7 +82,7 @@ struct ConfigurationPanelView: View {
                             description: adjacentJointOffsetRefinementStepsText,
                             value: $poseBuilderConfiguration.adjacentJointOffsetRefinementSteps.asDouble,
                             format: "%.f",
-                            range: 0...50,
+                            range: 1...50,
                             observableState: $observableState)
                         
                         // Reset Button
