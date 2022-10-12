@@ -66,9 +66,9 @@ struct CameraView: View {
                         }
                     }
                 }
-                .animation(.spring(), value: configurationPanelPosition)
                 .foregroundColor(.white)
                 .padding([.leading, .trailing, .bottom], 30)
+                .animation(.spring(), value: configurationPanelPosition)
             }
             
             // MARK: - Configuration View

@@ -11,7 +11,7 @@ struct PoseBuilderConfiguration {
     // The maximum number of poses returned.
     //
     // - Note: This parameter only applies to the multiple-pose algorithm.
-    var maxPoseCount = 5
+    let maxPoseCount = 15
     
     // The minimum value for valid joints in a pose.
     var jointConfidenceThreshold = 0.3

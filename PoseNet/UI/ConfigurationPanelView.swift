@@ -48,16 +48,6 @@ struct ConfigurationPanelView: View {
                     }
                     
                     VStack {
-                        // Maximum number of poses
-                        if poseBuilderConfiguration.algorithm == .multiple {
-                            SliderView(
-                                description: maximumNumberOfPosesText,
-                                value: $poseBuilderConfiguration.maxPoseCount.asDouble,
-                                format: "%.f",
-                                range: 2...20,
-                                observableState: $observableState)
-                        }
-                        
                         // Joint Confidence
                         SliderView(
                             description: jointConfidenceThresholdText,
@@ -95,9 +85,26 @@ struct ConfigurationPanelView: View {
                             range: 0...50,
                             observableState: $observableState)
                         
+                        // Reset Button
+                        Button(action: {
+                            poseBuilderConfiguration = PoseBuilderConfiguration()
+                            withAnimation(.spring().delay(0.5)) {
+                                position = .middle
+                            }
+                        }) {
+                            Text("Reset to Default")
+                                .bold()
+                                .foregroundColor(.white)
+                                .padding([.top, .bottom], 10)
+                                .padding([.leading, .trailing], 15)
+                                .background(.white.opacity(0.2))
+                                .cornerRadius(20)
+                                .shadow(radius: 3)
+                        }
+                        .padding(.top, 10)
+                        
                     }
                     .padding([.leading, .trailing], 5)
-                    .animation(.spring(), value: poseBuilderConfiguration.algorithm)
                 }
                 .padding([.leading, .trailing], 10)
             }
@@ -160,7 +167,7 @@ struct ConfigurationView_Previews: PreviewProvider {
                 .ignoresSafeArea(.all)
             ConfigurationPanelView(
                 poseBuilderConfiguration: Binding.constant(PoseBuilderConfiguration()),
-                position: Binding.constant(.middle),
+                position: Binding.constant(.bottom),
                 observableState: Binding.constant(ObservableState.staled))
         }
     }

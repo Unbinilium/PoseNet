@@ -1,7 +1,7 @@
 import Foundation
 
 enum PanelPosition: CGFloat {
-    case top = 300
-    case middle = 550
+    case top = 320
+    case middle = 420
     case bottom = 900
 }

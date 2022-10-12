@@ -20,7 +20,9 @@ struct SliderView: View {
             Slider(value: $value, in: range, onEditingChanged: { _ in
                 observableState = .changed
             })
+            .tint(.white.opacity(0.7))
             .padding(.bottom, 10)
+            .animation(.spring(), value: value)
         }
     }
 }
